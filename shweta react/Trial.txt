@@ -1,0 +1,31 @@
+import React from 'react'
+
+
+export default class Trial extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+          login: true
+        };
+    
+    }
+      changeState = () => {
+        this.setState({
+          login: !this.state.login
+        });
+      };
+      render() {
+        const { login } = this.state;
+        return (
+          <div className="App-left">
+            <button
+              type="button"
+              className={login ? "btn" : "danger"}
+              onClick={this.changeState}
+            >
+              {login ? " Login" : " Log Out"}
+            </button>
+          </div>
+        );
+      }
+    }
