@@ -1,0 +1,31 @@
+import React from 'react'
+
+
+export default class Change extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+          shweta: true
+        };
+    
+    }
+      changeState = () => {
+        this.setState({
+          shweta: !this.state.shweta
+        });
+      };
+      render() {
+        const { shweta } = this.state;
+        return (
+          <div className="App">
+            <button
+              type="button"
+              className={shweta ? "btn" : "danger"}
+              onClick={this.changeState}
+            >
+             <h1> {shweta ? "name: shweta , work: frontend" : " name:Priyanka , work : backend"}</h1>
+            </button>
+          </div>
+        );
+      }
+    }
